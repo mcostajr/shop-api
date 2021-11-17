@@ -1,8 +1,10 @@
+require('dotenv').config()
+
 module.exports = {
-  username: 'sfcbnmdr', 
-  password: '5vhPLyrAPVDprVI8GfFnQIsq6gr379kQ',
-  host: 'fanny.db.elephantsql.com',
-  database: 'sfcbnmdr', 
+  username: process.env.DB_USERNAME || 'postgres', 
+  password: process.env.DB_PASSWORD || '12345',
+  host: process.env.DB_HOSTNAME,
+  database: process.env.DB_DATABASE || 'localhost', 
   dialect: 'postgres',
   define: {
     timestamps: false
